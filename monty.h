@@ -39,4 +39,15 @@ typedef struct instruction_s
 #include <unistd.h>
 #include <fcntl.h>
 
+typedef struct var_s
+{
+	int queue;
+	size_t stack_len;
+} var_t;
+
+#define STACK 0
+#define Queue 1
+
+extern var_t var;
+
 #endif
