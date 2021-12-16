@@ -50,4 +50,7 @@ typedef struct var_s
 
 extern var_t var;
 
+void one_pint(stack_t **stack, unsigned int linenum);
+void two_pop(stack_t **stack, unsigned int linenum);
+
 #endif
