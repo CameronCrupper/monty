@@ -39,6 +39,20 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+* struct var_s - main variables
+* @queue: stack or que
+* @stack_len: stack length
+*/
+typedef struct var_s
+{
+	int queue;
+	size_t stack_len;
+} var_t;
+
+#define STACK 0
+#define QUEUE 1
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
