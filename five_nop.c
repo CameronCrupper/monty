@@ -2,10 +2,10 @@
 /**
  *five_nop - code that does nothing
  *@stack: stack
- *@linenum: line number
+ *@line_number: line number
  */
-void five_nop(stack_t **stack, unsigned int linenum)
+void five_nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
-	(void)linenum;
+	(void)line_number;
 }
