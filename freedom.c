@@ -13,6 +13,6 @@ void freedom(stack_t *stack)
 		free(remove);
 		remove = stack;
 	}
-	free(feat.tok);
-	fclose(feat.scr);
+free(feat.tok);
+fclose(feat.scr);
 }

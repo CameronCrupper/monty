@@ -64,11 +64,14 @@ typedef struct feature_s
 
 extern feature_t feat;
 
-void pint(stack_t **stack, unsigned int linenum);
+void one_pint(stack_t **stack, unsigned int linenum);
 void two_pop(stack_t **stack, unsigned int linenum);
-void get_(char *op, stack_t **stack, unsigned int linenum);
-void pall_(stack_t **stack, unsigned int linenum);
-int translate_(int argc, char *argv[]);
-void push_(stack_t **stack, unsigned int linenum, char *str);
+void op_code(void);
+void zero_pall(stack_t **stack, unsigned int linenum);
+int main(int ac, char const *av[]);
+void zero_push(stack_t **stack, unsigned int linenum);
+void three_swap(stack_t **stack, unsigned int linenum);
+void four_add(stack_t **stack, unsigned int linenum);
+void five_nop(stack_t **stack, unsigned int linenum);
 
 #endif
