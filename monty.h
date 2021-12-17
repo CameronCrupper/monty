@@ -1,5 +1,5 @@
-#ifndef MONTY_H
-#define MONTY_H
+#ifndef MONTY
+#define MONTY
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -38,17 +38,6 @@ typedef struct instruction_s
 #include <sys/stat.h>
 #include <unistd.h>
 #include <fcntl.h>
-
-typedef struct var_s
-{
-	int queue;
-	size_t stack_len;
-} var_t;
-
-#define STACK 0
-#define Queue 1
-
-extern var_t var;
 
 void one_pint(stack_t **stack, unsigned int linenum);
 void two_pop(stack_t **stack, unsigned int linenum);
