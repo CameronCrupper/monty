@@ -52,5 +52,9 @@ extern var_t var;
 
 void one_pint(stack_t **stack, unsigned int linenum);
 void two_pop(stack_t **stack, unsigned int linenum);
+void get_(char *op, stack_t **stack, unsigned int linenum);
+void pall_(stack_t **stack, unsigned int linenum);
+int translate_(int argc, char *argv[]);
+
 
 #endif
