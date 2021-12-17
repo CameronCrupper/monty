@@ -22,21 +22,17 @@ void zero_push(stack_t **stack, unsigned int linenum)
 		exit(EXIT_FAILURE);
 	}
 	h->n = atoi(feat.n);
-
 	if (feat.mode == STACK || (*stack) == NULL)
 	{
-		/* add node to the top */
 		h->prev = NULL;
 		h->next = *stack;
 		if (*stack)
-			(*stack)->prev = h;
+		(*stack)->prev = h;
 		*stack = h;
 	}
 	else
 	{
-		/* add node to the end */
-		for (t = *stack; t->next != NULL; t = t->next)
-			;
+		for (t = *stack; t->next != NULL; t = t->next);
 		t->next = h;
 		h->prev = t;
 		h->next = NULL;
