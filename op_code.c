@@ -22,13 +22,11 @@ void op_code(void)
 	while (getline(&c, &b, feat.scr) != -1)
 	{
 		linenum++;
-		/* Finds opcode in ops[] */
 		feat.tok = strtok(c, " \n");
 		if (feat.tok == NULL || feat.tok[0] == '#')
 			continue;
 		for (a = 0; type[a].opcode != NULL; a++)
 		{
-			/* Compare two strings, if they re the same return zero */
 			if (strcmp(type[a].opcode, feat.tok) == 0)
 			{
 				feat.n = strtok(NULL, " \n");
@@ -39,7 +37,9 @@ void op_code(void)
 		if (type[a].opcode == NULL)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", linenum, feat.tok);
+			free(stack);
 			exit(EXIT_FAILURE);
 		}
 	}
+	free(stack);
 }
