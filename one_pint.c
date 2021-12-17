@@ -9,11 +9,10 @@ void one_pint(stack_t **stack, unsigned int linenum)
 {
 	stack_t *NN = *stack;
 
-	if (stack == NULL)
+	if (!stack)
 	{
 		fprintf(stderr, "L%u: can't pint, stack empty\n", linenum);
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", NN->n);
-	return;
 }
