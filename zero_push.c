@@ -2,41 +2,43 @@
 /**
  * zero_push - push element to the stack
  * @stack: stack
- * @str: string
  * @linenum: line number
  */
-void zero_push(stack_t **stack, unsigned int linenum, char *str)
+void zero_push(stack_t **stack, unsigned int linenum)
 {
-	int n;
-	stack_t *NN = malloc(sizeof(stack_t));
+	stack_t *h, *t;
 
-	if (strcmp("0", str) == 0)
+	if (feat.n == NULL || number(feat.n) == 0)
 	{
-		n = 0;
+		free(*stack);
+		fprintf(stderr, "L%u: usage: push integer\n", linenum);
+		exit(EXIT_FAILURE);
 	}
-	else if (atoi(str) != 0)
+	h = malloc(sizeof(stack_t));
+	if (h == NULL)
 	{
-		n = atoi(str);
+		free(*stack);
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+	h->n = atoi(feat.n);
+
+	if (feat.mode == STACK || (*stack) == NULL)
+	{
+		/* add node to the top */
+		h->prev = NULL;
+		h->next = *stack;
+		if (*stack)
+			(*stack)->prev = h;
+		*stack = h;
 	}
 	else
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", linenum);
-		free(NN);
-		return;
+		/* add node to the end */
+		for (t = *stack; t->next != NULL; t = t->next)
+			;
+		t->next = h;
+		h->prev = t;
+		h->next = NULL;
 	}
-	if (!NN)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		free(NN);
-		exit(EXIT_FAILURE);
-	}
-	NN->prev = NULL;
-	NN->n = n;
-	NN->next = *stack;
-
-	if (*stack != NULL)
-	{
-		(*stack)->prev = NN;
-	}
-	*stack = NN;
 }
