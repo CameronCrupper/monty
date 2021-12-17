@@ -12,6 +12,9 @@ void op_code(void)
 		{"push", zero_push}, {"pall", zero_pall},
 		{"pint", one_pint},
 		{"pop", two_pop},
+		{"swap", three_swap},
+		{"add", four_add},
+		{"nop", five_nop},
 		{NULL, NULL},
 	};
 	stack_t *stack = NULL;
