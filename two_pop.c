@@ -6,20 +6,18 @@
  */
 void two_pop(stack_t **stack, unsigned int linenum)
 {
-	if (var.stack_len == 0)
+	stack_t *pop = *stack;
+
+	if (*stack == NULL)
 	{
-		dprintf(STDOUT_FILENO, "L%u: can't pop an empty stack\n", linenum);
+		fprintf(stderr, "L%u: can't pop an empty stack\n", linenum);
+		free(*stack);
 		exit(EXIT_FAILURE);
 	}
-	(*stack)->next->prev = (*stack)->prev;
-	(*stack)->prev->next = (*stack)->next;
-	if (var.stack_len != 1)
+	*stack = (*stack)->next;
+	free(pop);
+	if (*stack != NULL)
 	{
-		*stack = (*stack)->next;
+		(*stack)->prev = NULL;
 	}
-	else
-	{
-		*stack = NULL;
-	}
-var.stack_len--;
 }
