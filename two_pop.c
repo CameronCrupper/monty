@@ -11,7 +11,7 @@ void two_pop(stack_t **stack, unsigned int linenum)
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", linenum);
-		free(*stack);
+		freedom(*stack);
 		exit(EXIT_FAILURE);
 	}
 	*stack = (*stack)->next;

@@ -10,14 +10,14 @@ void zero_push(stack_t **stack, unsigned int linenum)
 
 	if (feat.n == NULL || number(feat.n) == 0)
 	{
-		free(*stack);
+		freedom(*stack);
 		fprintf(stderr, "L%u: usage: push integer\n", linenum);
 		exit(EXIT_FAILURE);
 	}
 	h = malloc(sizeof(stack_t));
 	if (h == NULL)
 	{
-		free(*stack);
+		freedom(*stack);
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}

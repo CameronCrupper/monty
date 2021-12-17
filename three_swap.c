@@ -11,7 +11,7 @@ void three_swap(stack_t **stack, unsigned int linenum)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short\n", linenum);
-		free(*stack);
+		freedom(*stack);
 		exit(EXIT_FAILURE);
 	}
 a = (*stack)->next;

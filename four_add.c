@@ -11,7 +11,7 @@ void four_add(stack_t **stack, unsigned int linenum)
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", linenum);
-		free(*stack);
+		freedom(*stack);
 		exit(EXIT_FAILURE);
 	}
 	(*stack)->next->n = (*stack)->n + (*stack)->next->n;
