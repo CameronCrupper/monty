@@ -10,7 +10,7 @@ void zero_push(stack_t **stack, unsigned int linenum)
 
 	if (feat.n == NULL || number(feat.n) == 0)
 	{
-		freedom(*stack);
+		free(*stack);
 		fprintf(stderr, "L%u: usage: push integer\n", linenum);
 		exit(EXIT_FAILURE);
 	}
