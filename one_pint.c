@@ -15,4 +15,5 @@ void one_pint(stack_t **stack, unsigned int linenum)
 		exit(EXIT_FAILURE);
 	}
 	printf("%d\n", NN->n);
+	return;
 }
