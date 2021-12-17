@@ -73,5 +73,6 @@ void zero_push(stack_t **stack, unsigned int linenum);
 void three_swap(stack_t **stack, unsigned int linenum);
 void four_add(stack_t **stack, unsigned int linenum);
 void five_nop(stack_t **stack, unsigned int linenum);
+int number(char *str);
 
 #endif
