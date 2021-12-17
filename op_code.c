@@ -37,9 +37,9 @@ void op_code(void)
 		if (type[a].opcode == NULL)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", linenum, feat.tok);
-			free(stack);
+			freedom(stack);
 			exit(EXIT_FAILURE);
 		}
 	}
-	free(stack);
+	freedom(stack);
 }

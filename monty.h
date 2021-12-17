@@ -74,6 +74,6 @@ void three_swap(stack_t **stack, unsigned int linenum);
 void four_add(stack_t **stack, unsigned int linenum);
 void five_nop(stack_t **stack, unsigned int line_number);
 int number(char *str);
-
+void freedom(stack_t *stack);
 
 #endif
