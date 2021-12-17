@@ -7,12 +7,12 @@
  */
 void one_pint(stack_t **stack, unsigned int linenum)
 {
-	stack_t *head = *stack;
+	stack_t *NN = *stack;
 
 	if (var.stack_len == 0)
 	{
-		dprintf(STDOUT_FILENO, "L%u: can't pint, stack empty\n", linenum);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", linenum);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", head->n);
+	printf("%d\n", NN->n);
 }
