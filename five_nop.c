@@ -4,8 +4,8 @@
  *@stack: stack
  *@line_number: line number
  */
-void five_nop(stack_t **stack, unsigned int line_number)
+void five_nop(stack_t **stack, unsigned int linenum)
 {
 	(void)stack;
-	(void)line_number;
+	(void)linenum;
 }
