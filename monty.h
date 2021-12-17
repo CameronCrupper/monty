@@ -1,8 +1,6 @@
 #ifndef MONTY
 #define MONTY
 
-#define _GNU_SOURCE
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -64,7 +62,7 @@ typedef struct feature_s
 	enum sqm mode;
 } feature_t;
 
-extern feature_t feat;
+extern instruction_t feat;
 
 void one_pint(stack_t **stack, unsigned int linenum);
 void two_pop(stack_t **stack, unsigned int linenum);
@@ -76,5 +74,7 @@ void three_swap(stack_t **stack, unsigned int linenum);
 void four_add(stack_t **stack, unsigned int linenum);
 void five_nop(stack_t **stack, unsigned int linenum);
 int number(char *str);
+
+#define _GNU_SOURCE
 
 #endif
