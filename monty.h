@@ -38,28 +38,31 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+/**
+*enum sqm - queue and stack
+*@STACK: stack top
+*@QUEUE: queue end
+*
+*/
+enum sqm
+{
+	STACK, QUEUE
+};
 
 /**
 * struct var_s - main variables
 * @queue: stack or que
 * @stack_len: stack length
 */
-typedef struct var_s
+typedef struct feature_s
 {
-	int queue;
-	size_t stack_len;
-} var_t;
+	char *n;
+	char *tok;
+	FILE *scr;
+	enum sqm mode;
+} feature_t;
 
-#define STACK 0
-#define QUEUE 1
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
-#include <fcntl.h>
+extern feature_t feat;
 
 void pint(stack_t **stack, unsigned int linenum);
 void two_pop(stack_t **stack, unsigned int linenum);
