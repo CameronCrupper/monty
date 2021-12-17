@@ -1,4 +1,5 @@
 #include "monty.h"
+var_t var;
 /**
  *translate_ - monty code interpreter
  *@ac: argc
